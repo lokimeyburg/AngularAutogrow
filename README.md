@@ -1,0 +1,3 @@
+AngularJS Directive for auto expanding textareas.
+
+More details to come...
