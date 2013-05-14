@@ -41,6 +41,8 @@ app.directive('autogrow', function() {
       $shadow.html(val);
 
       element.css('height', Math.max($shadow[0].offsetHeight + 10 /* the "threshold" */, minHeight) + 'px');
+      element.css('overflow', 'hidden');
+      element.css('display', 'block');
     }
 
     element.bind('keyup keydown keypress change', update);
