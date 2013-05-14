@@ -18,6 +18,8 @@ app.directive('autogrow', function() {
       fontSize: element.css('fontSize'),
       fontFamily: element.css('fontFamily'),
       lineHeight: element.css('lineHeight'),
+      maxHeight: element.css('maxHeight'),
+      minHeight: element.css('minHeight'),
       resize:     'none'
     });
     angular.element(document.body).append($shadow);
