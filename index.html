@@ -11,22 +11,20 @@
 <body style="background: #efefef;">
 
 <div ng-app="medeo" style="width: 500px; background: #fff; border: 1px solid #ccc; margin: 50px auto; padding: 20px;">
-  <div ng-controller="FirstCtrl">
     <h3>Autogrow Textarea</h3>
     <div>
-      <textarea autogrow></textarea>
+      <textarea id="foo" autogrow style="width: 50px;"></textarea>
+    </div>
+    <div>
+      <textarea id="bar" autogrow></textarea>
     </div>
     <div>
       <textarea autogrow></textarea>
     </div>
-    <div>
-      <textarea autogrow></textarea>
-    </div>
-
-  </div>
 </div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
   <script type="text/javascript" src="angular-autogrow.js"></script>
 </body>
 </html>

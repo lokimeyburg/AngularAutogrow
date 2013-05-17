@@ -1,26 +1,27 @@
 var app = angular.module("medeo", [])
 
-function FirstCtrl($scope) {
-  $scope.data = { message: "panel" }
-}
 
 app.directive('autogrow', function() {
   return function(scope, element, attr){
     var minHeight = element[0].offsetHeight,
-      paddingLeft = element.css('paddingLeft'),
-      paddingRight = element.css('paddingRight');
+      paddingLeft = element.css('padding-left'),
+      paddingRight = element.css('padding-right');
 
     var $shadow = angular.element('<div></div>').css({
-      position: 'absolute',
-      top: -10000,
-      left: -10000,
-      width: element[0].offsetWidth - parseInt(paddingLeft ? paddingLeft : 0) - parseInt(paddingRight ? paddingRight : 0),
-      fontSize: element.css('fontSize'),
-      fontFamily: element.css('fontFamily'),
-      lineHeight: element.css('lineHeight'),
-      maxHeight: element.css('maxHeight'),
-      minHeight: element.css('minHeight'),
-      resize:     'none'
+      'font-size'  : element.css('font-size'),
+      'font-family': element.css('font-family'),
+      'width'      : element.css('width'),
+      'padding-top'   : element.css('padding-top'),
+      'padding-right' : element.css('padding-right'),
+      'padding-bottom': element.css('padding-bottom'),
+      'padding-left'  : element.css('padding-left'),
+      'line-height': element.css('padding-left'),
+      'overflow-x' : 'hidden',
+      'position'   : 'absolute',
+      'top'        : 0,
+      'left'   : -9999,
+      'white-space': 'pre-wrap',
+      'word-wrap': 'break-word'
     });
     angular.element(document.body).append($shadow);
 
@@ -40,6 +41,7 @@ app.directive('autogrow', function() {
         .replace(/\s{2,}/g, function(space) { return times('&nbsp;', space.length - 1) + ' ' });
       $shadow.html(val);
 
+      console.log(element.css('width'));
       element.css('height', Math.max($shadow[0].offsetHeight + 10 /* the "threshold" */, minHeight) + 'px');
       element.css('overflow', 'hidden');
       element.css('display', 'block');
