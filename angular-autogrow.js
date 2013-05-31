@@ -9,19 +9,24 @@ app.directive('autogrow', function() {
 
     // style the mirror
     var $mirror = angular.element('<div></div>').css({
-      'font-size'  : element.css('font-size'),
-      'font-family': element.css('font-family'),
-      'width'      : element.css('width'),
-      'padding'    : element.css('padding'),
-      'position'   : 'relative',
-      'white-space': 'pre-wrap',
-      'word-wrap': 'break-word',
-      'border': element.css('border'),
+      'font-size'         : element.css('font-size'),
+      'font-family'       : element.css('font-family'),
+      'width'             : element.css('width'),
+      'padding-left'      : element.css('padding-left'),
+      'padding-right'     : element.css('padding-right'),
+      'padding-bottom'    : element.css('padding-bottom'),
+      'padding-top'       : element.css('padding-top'),
+      'border'            : element.css('border'),
+      'position'          : 'absolute',
+      'top'               : '-10000px',
+      'left'              : '-10000px',
+      'white-space'       : 'pre-wrap',
+      'word-wrap'         : 'break-word',
       // CSS3 specific styles
       'box-sizing'          : element.css('box-sizing'),
       '-moz-box-sizing'     : element.css('-moz-box-sizing'),
       '-webkit-box-sizing'  : element.css('-webkit-box-sizing'),
-      'line-height'         : element.css('line-height'),
+      'line-height'         : element.css('line-height')
 
     });
 
@@ -52,7 +57,9 @@ app.directive('autogrow', function() {
       // style the textarea
       element.css('height', Math.max($mirror[0].offsetHeight + 10 /* the "threshold" */, minHeight) + 'px');
       element.css('overflow', 'hidden');
+      element.css('overflow', 'hidden');
       element.css('display', 'block');
+      element.css('resize', 'none');
     }
 
 
